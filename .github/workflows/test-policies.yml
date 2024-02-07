@@ -24,6 +24,10 @@ jobs:
         shell: pwsh
         run: |
           Install-Module -Name "Az" -RequiredVersion "4.7.0" -Force -Scope CurrentUser -ErrorAction Stop
+      - name: Check PowerShell modules
+        shell: pwsh
+        run: |
+          Find-Module Pester
       - name: Login to Azure
         uses: azure/login@v1
         with:
